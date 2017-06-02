@@ -36,30 +36,48 @@ WHERE COMM < 100 OR COMM IS NULL;
 
 # 10. 检索出雇佣年限超过 35 年的员工信息
 # 11. 找出姓名以 A、B、S 开始的员工信息
-SELECT * FROM emp
-WHERE ENAME LIKE 'A%'OR emp.ENAME LIKE 'B%'OR emp.ENAME LIKE 'S%';
+SELECT *
+FROM emp
+WHERE ENAME LIKE 'A%' OR emp.ENAME LIKE 'B%' OR emp.ENAME LIKE 'S%';
 # 12. 找到名字长度为 4 个字符的员工信息
 # 13. 名字中不包含 R 字符的员工信息
-SELECT * FROM emp
+SELECT *
+FROM emp
 WHERE ENAME NOT LIKE '%R%';
 # 14. 找出员工名字的前3个字符
 # 15. 将名字中 A 改为 a
 # 16. 将员工的雇佣日期拖后 10 年
 # 17. 返回员工的详细信息并按姓名排序
-SELECT * FROM emp
+SELECT *
+FROM emp
 ORDER BY ENAME;
 # 18. 返回员工的信息并按员工的工作年限降序排列
-SELECT * FROM emp
-ORDER BY HIREDATE  ;
+SELECT *
+FROM emp
+ORDER BY HIREDATE;
 # 19. 返回员工的信息并按工作降序、工资升序排列
 
 # 20. 返回员工的姓名、雇佣年份和月份，并按月份和雇佣日期排序
 # 21. 计算员工的日薪，每月按 30 天
 # 22. 找出 2 月份雇佣的员工
-SELECT * FROM scott.emp
+SELECT *
+FROM scott.emp
 WHERE HIREDATE RLIKE '-02-';
 # 23. 至今为止，员工被雇佣的天数
 # 24. 找出姓名中包含 A 的员工信息
-SELECT * FROM scott.emp
+SELECT *
+FROM scott.emp
 WHERE ENAME RLIKE 'A';
 # 25. 计算出员工被雇佣了多少年、多少月、多少日
+
+SELECT
+  count(SAL),
+  avg(SAL),
+  min(SAL),
+  max(SAL),
+  sum(SAL)
+FROM scott.emp;
+SELECT count(*) as 总数
+FROM scott.emp;
+
+SELECT * FROM study.csdn_user_info;
